@@ -1,0 +1,1 @@
+# git-msa-config
