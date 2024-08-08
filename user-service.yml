@@ -6,7 +6,7 @@ spring:
     url: ${database.url}?serverTimezone=Asia/Seoul&autoReconnect=true&validationQuery=select 1
     username: msaportal
     password: msaportal1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
   mail: # 비밀번호 변경 이메일 발송
     host: smtp.gmail.com # smtp host
     port: 587 # smtp port
