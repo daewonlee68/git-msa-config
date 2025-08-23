@@ -1,0 +1,97 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ApiGateWay
+  profiles:
+    active:
+      on-profile: local
+  security:
+    user:
+      name: admin
+      password: admin
+  cloud:
+    config:
+      retry:
+        initial-interval: 1000
+        max-attempts: 6
+        max-interval: 2000
+        multiplier: 1.1
+      fail-fast: true
+    gateway:
+      routes:
+        - id: user-server
+          uri: lb://USER-SERVER
+          predicates:
+            - Path=/user-server/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-server/(?<segment>.*), /$\{segment}
+        - id: game-mng-service
+          uri: lb://GAME-MNG-SERVICE
+          predicates:
+            - Path=/game-mng-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/game-mng-service/(?<segment>.*), /$\{segment}
+        - id: openapi
+          uri: http://cenlots2024-cenlots-api-service
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<segment>.*), /$\{segment}/v3/api-docs
+      default-filters:
+        - name: GlobalFilter
+          args:
+            preLogger: true
+            postLogger: true
+      discovery:
+        locator:
+          enabled: true
+      httpclient:
+        connect-timeout: 30000
+        response-timeout: 30000
+
+# config server actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, info
+
+info:
+  app:
+    name: Spring Cloud Gateway
+    description: API 라우팅 및 보안, 모니터링/메트릭 등의 기능을 간단하고 효과적인 방법으로 제공
+  swagger-ui: http://cenlots2024-cenlots-api-service:${server.port}/webjars/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
+
+springdoc:
+  swagger-ui:
+  path: /swagger-ui.html
+
+messages:
+  directory: test # ${user.dir}/msa-attach-volume/messages
+
+apigateway:
+  host: http://cenlots2024-cenlots-api-service:${server.port}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: cenlots2024-discoveryserver-service
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
+    eviction-interval-timer-in-ms: 3000
+      
+# 2시간(7,200,000), 1일(86,400,000) jwt token
+#token:
+#  expiration_time: 7200000
+#  refresh_time: 86400000
+#  secret: 'token_secret'
