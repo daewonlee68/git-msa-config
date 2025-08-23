@@ -8,13 +8,13 @@ spring:
     active:
       on-profile: local
   redis:
+    sentinel:
+      master: mymaster           # sentinel.conf에서 정의된 마스터 이름
+      nodes:
+        - localhost:26379
+        - localhost:26380
+        - localhost:26381
     lettuce:
-      sentinel:
-        master: mymaster
-        nodes:
-          - localhost:26379
-          - localhost:26380
-          - localhost:26381
       pool:
         max-active: 10
         max-idle: 10
