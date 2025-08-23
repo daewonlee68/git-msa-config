@@ -9,12 +9,25 @@ spring:
       on-profile: local
   redis:
     lettuce:
+      sentinel:
+        master: mymaster
+        nodes:
+          - localhost:26379
+          - localhost:26380
+          - localhost:26381
       pool:
         max-active: 10
         max-idle: 10
         min-idle: 2
-    port: 6666
-    host: localhost
+
+#  redis:
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        max-idle: 10
+#        min-idle: 2
+#    port: 6666
+#    host: localhost
 
 #  cloud:
 #    config:
