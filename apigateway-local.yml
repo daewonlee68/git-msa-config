@@ -21,13 +21,13 @@ spring:
       fail-fast: true
     gateway:
       routes:
-        - id: user-server
-          uri: lb://USER-SERVER
+        - id: user-service
+          uri: lb://USER-SERVICE
           predicates:
-            - Path=/user-server/**
+            - Path=/user-service/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-server/(?<segment>.*), /$\{segment}
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
         - id: game-mng-service
           uri: lb://GAME-MNG-SERVICE
           predicates:

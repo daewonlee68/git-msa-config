@@ -3,13 +3,10 @@ server:
 
 spring:
   application:
-    name: user-server
+    name: user-service
   profiles:
     active:
-      on-profile: dev
-  cloud:
-    discovery:
-      enabled: false
+      on-profile: prod
   redis:
     lettuce:
       pool:
@@ -18,7 +15,6 @@ spring:
         min-idle: 2
     port: 16379
     host: dev-elasticache-replication-group.ikmdkh.ng.0001.apn2.cache.amazonaws.com
-
 #  cloud:
 #    config:
 #      enabled: true
@@ -116,12 +112,13 @@ log4jdbc:
 messages:
   directory: test
 
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#    hostname: cenlots2024-discoveryserver-service
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    service-url:
-#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: cenlots2024-discoveryserver-service
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
