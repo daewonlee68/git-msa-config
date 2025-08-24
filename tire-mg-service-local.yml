@@ -31,9 +31,8 @@ spring:
         max-active: 10
         max-idle: 10
         min-idle: 2
-      max-redirects: 
-#  password: bitnami   # 비밀번호 사용 시
-  timeout: 500
+      max-redirects: 3 
+    timeout: 500
 #  redis:
 #    sentinel:
 #      master: mymaster              # Sentinel 설정에서 감시하는 마스터 이름
