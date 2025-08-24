@@ -9,10 +9,7 @@ spring:
       on-profile: local
   redis:
     cluster:
-      nodes:
-        - 172.21.128.1:6371
-        - 172.21.128.1:6372
-        - 172.21.128.1:6373
+      nodes: 172.21.128.1:6371,172.21.128.1:6372,172.21.128.1:6373
       max-redirects: 3
     timeout: 500ms
     jedis:
