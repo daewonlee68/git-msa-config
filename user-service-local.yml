@@ -9,7 +9,7 @@ spring:
       on-profile: local
   redis:
     host: localhost
-    port: 6371
+    port: 6379
     password: bitnami
     timeout: 500ms
     jedis:
