@@ -28,7 +28,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-        - id: game-mng-service
+        - id: tire-mg-service
           uri: lb://TIRE-MG-SERVICE
           predicates:
             - Path=/tire-mg-service/**
