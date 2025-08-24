@@ -8,14 +8,16 @@ spring:
     active:
       on-profile: local
   redis:
-#    password: your_redis_password   # Redis에 비밀번호 설정 시
-    sentinel:
-      master: mymaster              # Sentinel 설정에서 감시하는 마스터 이름
-      nodes: 172.21.128.1:26379,172.21.128.1:26380,172.21.128.1:26381
-    timeout: 5000                   # 타임아웃(ms)
-    lettuce:
-      shutdown-timeout: 100          # Lettuce 종료 타임아웃(ms)
-
+    cluster:
+      nodes:
+        - 172.21.128.1:6371
+        - 172.21.128.1:6372
+        - 172.21.128.1:6373
+	    pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+      max-redirects: 
 #  redis:
 #    lettuce:
 #      pool:
