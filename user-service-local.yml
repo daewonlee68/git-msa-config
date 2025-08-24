@@ -18,6 +18,8 @@ spring:
         max-idle: 10
         min-idle: 2
       max-redirects: 3
+    timeout: 500
+	  
 #  redis:
 #    lettuce:
 #      pool:
