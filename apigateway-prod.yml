@@ -21,13 +21,13 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-        - id: game-mng-service
-          uri: lb://GAME-MNG-SERVICE
+        - id: tire-mg-service
+          uri: lb://TIRE-MG-SERVICE
           predicates:
-            - Path=/game-mng-service/**
+            - Path=/tire-mg-service/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/game-mng-service/(?<segment>.*), /$\{segment}
+            - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
         - id: ticket-sue-service
           uri: lb://TICKET-SUE-SERVICE
           predicates:
