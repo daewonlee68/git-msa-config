@@ -17,7 +17,7 @@ spring:
         max-active: 10
         max-idle: 10
         min-idle: 2
-      max-redirects: 
+      max-redirects: 3
 #  redis:
 #    lettuce:
 #      pool:
