@@ -8,17 +8,17 @@ spring:
     active:
       on-profile: local
   redis:
-  cluster:
-    nodes:
-      - 172.21.128.1:6371
-      - 172.21.128.1:6372
-      - 172.21.128.1:6373
-    pool:
-      max-active: 10
-      max-idle: 10
-      min-idle: 2
-    max-redirects: 3
-  timeout: 500
+    cluster:
+      nodes:
+        - 172.21.128.1:6371
+        - 172.21.128.1:6372
+        - 172.21.128.1:6373
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+      max-redirects: 3
+    timeout: 500
 #  redis:
 #    lettuce:
 #      pool:
