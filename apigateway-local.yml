@@ -29,12 +29,12 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
         - id: game-mng-service
-          uri: lb://GAME-MNG-SERVICE
+          uri: lb://TIRE-MG-SERVICE
           predicates:
-            - Path=/game-mng-service/**
+            - Path=/tire-mg-service/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/game-mng-service/(?<segment>.*), /$\{segment}
+            - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
         - id: openapi
           uri: http://cenlots2024-cenlots-api-service
           predicates:
