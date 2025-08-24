@@ -25,10 +25,7 @@ spring:
 #    password: your_redis_password   # Redis에 비밀번호 설정 시
     sentinel:
       master: mymaster              # Sentinel 설정에서 감시하는 마스터 이름
-      nodes:
-        - localhost:26379           # Sentinel 인스턴스 주소와 포트
-        - localhost:26380
-        - localhost:26381
+      nodes: localhost:26379,localhost:26380,localhost:26381
     timeout: 5000                   # 타임아웃(ms)
     lettuce:
       shutdown-timeout: 100          # Lettuce 종료 타임아웃(ms)
