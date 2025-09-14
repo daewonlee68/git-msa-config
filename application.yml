@@ -25,17 +25,6 @@ api:
     userservice:
       url: http://cenlots2024-userservice-service
 
-# MyBatis 설정
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    map-underscore-to-camel-case: true
-    default-fetch-size: 100
-    default-statement-timeout: 30
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
-    log-prefix: "[MyBatis] "
-    cache-enabled: false
-
 # 로깅 설정
 logging:
   level
