@@ -24,11 +24,10 @@ api:
       port: 8080
     userservice:
       url: http://cenlots2024-userservice-service
-    gamemngservice:
-      url: http://cenlots2024-gamemngservice-service
-    ticketsueservice:
-      url: http://cenlots2024-ticketsueservice-service
-    gamepowerballservice:
-      url: http://cenlots2024-gamepowerballservice-service
-    callurllist: 
-      url: /api/v1/rest/selectCallUriRltn
+
+# 로깅 설정
+logging:
+  level:
+    org.tir.com.mg.mapper: DEBUG
+    jdbc.sqltiming: INFO
+    jdbc.sqlonly: DEBUG
