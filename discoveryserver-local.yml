@@ -26,3 +26,11 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 5
+    # 아래 3줄 추가 - Eureka 서버의 응답 캐시 비활성화
+    response-cache-update-interval-ms: 1000  # 기본 30초 -> 1초
+    response-cache-auto-expiration-in-seconds: 5  # 기본 180초 -> 5초
+    enable-self-preservation: false  # Self Preservation 모드 비활성화 (개발용)
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
