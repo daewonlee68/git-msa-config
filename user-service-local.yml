@@ -131,19 +131,15 @@ messages:
   directory: test
 
 eureka:
-  instance:
-    prefer-ip-address: true
-    hostname: cenlots2024-discoveryserver-service
   client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
-    service-url:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
-    registry-fetch-interval-seconds: 5  # 기본 30초 -> 5초
+    registry-fetch-interval-seconds: 5
     healthcheck:
-      enabled: true
+      enabled: true  # UserServer에만, Gateway는 선택
   instance:
     prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 5  # 하트비트 간격 (기본 30초)
-    lease-expiration-duration-in-seconds: 10  # 만료 시간 (기본 90초)
-  
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
