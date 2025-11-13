@@ -136,7 +136,8 @@ eureka:
     hostname: cenlots2024-discoveryserver-service
   client:
     serviceUrl:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+    defaultZone: http://admin:admin@cenlots2024-discoveryserver-service:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
     registry-fetch-interval-seconds: 5
