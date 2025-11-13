@@ -77,19 +77,17 @@ apigateway:
   host: http://cenlots2024-cenlots-api-service:${server.port}
 
 eureka:
-  instance:
-    prefer-ip-address: true
-    hostname: cenlots2024-discoveryserver-service
   client:
+    serviceUrl:
+      defaultZone: http://admin:admin@cenlots2024-discoveryserver-service:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
-    service-url:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
-    registry-fetch-interval-seconds: 5  # 기본 30초 -> 5초로 단축
-    disable-delta: true  # 델타 업데이트 비활성화, 전체 레지스트리 가져오기
+    registry-fetch-interval-seconds: 5
+    disable-delta: true
   instance:
-    lease-renewal-interval-in-seconds: 5  # 하트비트 간격 (기본 30초)
-    lease-expiration-duration-in-seconds: 10 
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
 #  server:
 #    waitTimeInMsWhenSyncEmpty: 0
 #    enableSelfPreservation: false
