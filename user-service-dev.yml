@@ -52,9 +52,9 @@ spring:
 
 jdbc:
 #  url: jdbc:postgresql://10.10.5.183:5432/cenausdb03?charSet=UTF-8&prepareThreshold=1
-  url: jdbc:log4jdbc:postgresql://10.10.5.183:5432/cenlotsdb03?charSet=UTF-8&prepareThreshold=1&serverTimezone=Asia/Seoul
-  username: cenadm03
-  password: cenlotaws123!
+  url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?charSet=UTF-8&prepareThreshold=1&serverTimezone=Asia/Seoul
+  username: postgres
+  password: dev@tire1234!
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 #  driverClassName: org.postgresql.Driver
 
