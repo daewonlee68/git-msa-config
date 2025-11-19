@@ -24,7 +24,7 @@ spring:
     host: dev-elasticache-replication-group.ikmdkh.ng.0001.apn2.cache.amazonaws.com
 
 jdbc:
-  url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?charSet=UTF-8&prepareThreshold=1&serverTimezone=Asia/Seoul
+  url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
   username: postgres
   password: dev@tire1234!
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
