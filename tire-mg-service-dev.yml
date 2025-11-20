@@ -20,7 +20,7 @@ spring:
         max-active: 10
         max-idle: 10
         min-idle: 2
-    port: 16379
+    port: 6379
     host: redis.backend.svc.cluster.local
 
 jdbc:
