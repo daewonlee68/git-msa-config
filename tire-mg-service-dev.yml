@@ -22,6 +22,8 @@ spring:
         min-idle: 2
     port: 6379
     host: redis.backend.svc.cluster.local
+  thymeleaf:
+    check-template-location: false
 
 jdbc:
   url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
