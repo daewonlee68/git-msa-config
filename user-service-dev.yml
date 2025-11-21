@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: user-service
+  thymeleaf:
+    check-template-location: false
   profiles:
     active:
       on-profile: dev
