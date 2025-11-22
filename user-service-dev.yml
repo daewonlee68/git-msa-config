@@ -32,8 +32,9 @@ spring:
   # oauth2 를 사용하기 위해서는 아래의 TODO 를 등록해야 함
   security:
     user:
-      name: admin
-      password: admin
+      name: ${ACTUATOR_USER:admin}  # 환경변수 사용
+      password: ${ACTUATOR_PASSWORD:admin}  #환경변수 사용
+      roles: ADMIN  #역할 추가
     oauth2:
       client:
         registration:
