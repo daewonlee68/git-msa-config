@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: game-mng-service
+    name: tire-mng-service
   main:
     allow-bean-definition-overriding: true
   profiles:
