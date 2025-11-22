@@ -17,6 +17,33 @@ file:
 messages:
   directory: test # ${user.dir}/msa-attach-volume/messages
 
+spring:
+  security:
+    user:
+      name: ${ACTUATOR_USER:admin}
+      password: ${ACTUATOR_PASSWORD:admin}
+      roles: ADMIN
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,refresh,beans
+      base-path: /actuator
+  
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  
+  health:
+    mail:
+      enabled: false
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+      
 api:
   servicecall:
     base:
