@@ -25,6 +25,10 @@ spring:
     timeout: 3000ms
   thymeleaf:
     check-template-location: false
+  security:
+    user:
+      name: ${ACTUATOR_USER}  # Kubernetes Secret 필수
+      password: ${ACTUATOR_PASSWORD}  # Kubernetes Secret 필수
 
 jdbc:
   url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
@@ -33,10 +37,10 @@ jdbc:
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"  # 모든 Actuator 엔드포인트 활성화
+  endpoint:
+    health:
+      show-details: when-authorized  # 인증 필요
+
 eureka:
   client:
     register-with-eureka: false  # 자신을 Eureka에 등록하지 않음
