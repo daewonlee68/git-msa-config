@@ -34,7 +34,6 @@ spring:
     user:
       name: ${ACTUATOR_USER:admin}  # 환경변수 사용
       password: ${ACTUATOR_PASSWORD:admin}  #환경변수 사용
-      roles: ADMIN  #역할 추가
     oauth2:
       client:
         registration:
