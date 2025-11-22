@@ -107,13 +107,9 @@ jdbc:
 
 # config server actuator
 management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh, health, beans, info
-  health:
-    mail:
-      enabled: false
+  endpoint:
+    health:
+      show-details: always 
 
 info:
   app:
