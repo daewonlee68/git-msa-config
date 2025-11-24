@@ -22,6 +22,7 @@ spring:
         min-idle: 2
     port: 6379
     host: redis.backend.svc.cluster.local
+    password: admin1234!
     timeout: 3000ms
   thymeleaf:
     check-template-location: false
