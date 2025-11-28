@@ -23,11 +23,6 @@ spring:
       name: ${ACTUATOR_USER:admin}
       password: ${ACTUATOR_PASSWORD:admin}
       roles: ADMIN
-  data:
-    web:
-      pageable:
-        one-indexed-parameters: true
-        default-page-size: 10
 
 management:
   endpoints:
