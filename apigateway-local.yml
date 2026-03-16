@@ -35,6 +35,14 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
+        - id: app-tire-mg-service
+          uri: lb://APP-TIRE-MG-SERVICE
+          predicates:
+            - Path=/tire-mg-service/**
+            - Header=X-Client-Type, app
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
         - id: openapi
           uri: http://cenlots2024-cenlots-api-service
           predicates:
