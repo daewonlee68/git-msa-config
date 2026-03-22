@@ -28,18 +28,18 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-        - id: tire-mg-service
-          uri: lb://TIRE-MG-SERVICE
-          predicates:
-            - Path=/tire-mg-service/**
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
         - id: app-tire-mg-service
           uri: lb://APP-TIRE-MG-SERVICE
           predicates:
             - Path=/tire-mg-service/**
             - Header=X-Client-Type, app
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
+        - id: tire-mg-service
+          uri: lb://TIRE-MG-SERVICE
+          predicates:
+            - Path=/tire-mg-service/**
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
