@@ -21,19 +21,19 @@ spring:
       fail-fast: true
     gateway:
       routes:
+        - id: oauth2-route
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/oauth2/**, /login/oauth2/**
+          filters:
+       #     - RemoveRequestHeader=Cookie
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user-service/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-        - id: oauth2-route
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/oauth2/**, /login/oauth2/**
-          filters:
-            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}        
         - id: app-tire-mg-service
           uri: lb://APP-TIRE-MG-SERVICE
           predicates:
