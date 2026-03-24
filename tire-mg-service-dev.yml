@@ -46,14 +46,3 @@ eureka:
   client:
     register-with-eureka: false  # 자신을 Eureka에 등록하지 않음
     fetch-registry: false
-
-
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#    hostname: cenlots2024-discoveryserver-service
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    service-url:
-#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
