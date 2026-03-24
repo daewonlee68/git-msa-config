@@ -63,8 +63,6 @@ spring:
 #      enabled: true
 
 jdbc:
-#  url: jdbc:postgresql://10.10.5.183:5432/cenausdb03?charSet=UTF-8&prepareThreshold=1
-#  url: jdbc:log4jdbc:postgresql://localhost:7777/cenlotsdb03?charSet=UTF-8&prepareThreshold=1&serverTimezone=Asia/Seoul
   url: jdbc:log4jdbc:postgresql://localhost:5432/tiremsdb?charSet=UTF-8&prepareThreshold=1
   username: postgres
   password: user1234
@@ -92,20 +90,6 @@ jdbc:
     jcache:
       config: classpath:ehcache.xml
 
-# rabbitmq server
-#  rabbitmq:
-#    host: ${rabbitmq.hostname:localhost}
-#    port: 5672
-#    username: guest
-#    password: guest
-
-#jwt:
-#  header: Authorization
-  #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
-  #echo 'silvernine-tech-spring-boot-jwt-tutorial-secret-silvernine-tech-spring-boot-jwt-tutorial-secret'|base64
-#  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
-#  token-validity-in-seconds: 86400
-
 # config server actuator
 management:
   endpoint:
@@ -128,13 +112,9 @@ messages:
   directory: test
 
 eureka:
-#  instance:
-#    prefer-ip-address: true
-#    hostname: cenlots2024-discoveryserver-service
   client:
     serviceUrl:
-#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
-      defaultZone: http://admin:admin@cenlots2024-discoveryserver-service:8761/eureka/
+      defaultZone: http://admin:admin@tbiseo-discoveryserver-service:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
     registry-fetch-interval-seconds: 5
