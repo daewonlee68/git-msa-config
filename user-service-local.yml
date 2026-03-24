@@ -108,9 +108,6 @@ log4jdbc:
     sql:
       maxlinelength: 0
 
-messages:
-  directory: test
-
 eureka:
   client:
     serviceUrl:
