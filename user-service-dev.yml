@@ -81,20 +81,6 @@ jdbc:
     jcache:
       config: classpath:ehcache.xml
 
-# rabbitmq server
-#  rabbitmq:
-#    host: ${rabbitmq.hostname:localhost}
-#    port: 5672
-#    username: guest
-#    password: guest
-
-#jwt:
-#  header: Authorization
-  #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
-  #echo 'silvernine-tech-spring-boot-jwt-tutorial-secret-silvernine-tech-spring-boot-jwt-tutorial-secret'|base64
-#  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
-#  token-validity-in-seconds: 86400
-
 # config server actuator
 management:
   endpoint:
@@ -115,13 +101,3 @@ log4jdbc:
 
 messages:
   directory: test
-
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#    hostname: cenlots2024-discoveryserver-service
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    service-url:
-#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
