@@ -39,11 +39,3 @@ management:
       enabled: true
     readinessState:
       enabled: true
-      
-api:
-  servicecall:
-    base:
-      url: http://tbiseo-api-service
-      port: 8080
-    userservice:
-      url: http://tbiseo-userservice-service
