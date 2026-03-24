@@ -84,8 +84,8 @@ springdoc:
   swagger-ui:
   path: /swagger-ui.html
 
-messages:
-  directory: test # ${user.dir}/msa-attach-volume/messages
+#messages:
+#  directory: test # ${user.dir}/msa-attach-volume/messages
 
 apigateway:
   host: http://tbiseo-api-service:${server.port}
@@ -102,13 +102,3 @@ eureka:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
-#  server:
-#    waitTimeInMsWhenSyncEmpty: 0
-#    enableSelfPreservation: false
-#    eviction-interval-timer-in-ms: 3000
-      
-# 2시간(7,200,000), 1일(86,400,000) jwt token
-#token:
-#  expiration_time: 7200000
-#  refresh_time: 86400000
-#  secret: 'token_secret'
