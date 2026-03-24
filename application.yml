@@ -21,6 +21,9 @@ spring:
       password: ${ACTUATOR_PASSWORD:admin}
       roles: ADMIN
 
+messages:
+  directory: test 
+  
 management:
   endpoints:
     web:
