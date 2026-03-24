@@ -61,7 +61,7 @@ management:
 eureka:
   instance:
     prefer-ip-address: true
-    hostname: cenlots2024-discoveryserver-service
+    hostname: tbiseo-discoveryserver-service
   client:
     register-with-eureka: true
     fetch-registry: true
