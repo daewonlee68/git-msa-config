@@ -39,7 +39,7 @@ spring:
 ##            redirect-uri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
             client-authentication-method: POST
             authorization-grant-type: authorization_code
-            scope: profile_nickname
+            scope: profile_nickname,account_email,phone_number
             client-name: Kakao
         provider:
           kakao:
