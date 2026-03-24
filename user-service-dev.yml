@@ -48,7 +48,7 @@ spring:
             redirect-uri: https://tirehub.co.kr/oauth2/callback/kakao
             client-authentication-method: POST
             authorization-grant-type: authorization_code
-            scope: profile_nickname
+            scope: profile_nickname,account_email,phone_number
             client-name: Kakao
         provider:
           kakao:
