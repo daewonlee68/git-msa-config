@@ -46,7 +46,7 @@ management:
 api:
   servicecall:
     base:
-      url: http://cenlots2024-cenlots-api-service
+      url: http://tbiseo-api-service
       port: 8080
     userservice:
-      url: http://cenlots2024-userservice-service
+      url: http://tbiseo-userservice-service
