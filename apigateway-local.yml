@@ -50,7 +50,7 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
         - id: openapi
-          uri: http://cenlots2024-cenlots-api-service
+          uri: http://tbiseo-api-service
           predicates:
             - Path=/v3/api-docs/**
           filters:
@@ -78,7 +78,7 @@ info:
   app:
     name: Spring Cloud Gateway
     description: API 라우팅 및 보안, 모니터링/메트릭 등의 기능을 간단하고 효과적인 방법으로 제공
-  swagger-ui: http://cenlots2024-cenlots-api-service:${server.port}/webjars/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
+  swagger-ui: http://tbiseo-api-service:${server.port}/webjars/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
 
 springdoc:
   swagger-ui:
@@ -88,12 +88,12 @@ messages:
   directory: test # ${user.dir}/msa-attach-volume/messages
 
 apigateway:
-  host: http://cenlots2024-cenlots-api-service:${server.port}
+  host: http://tbiseo-api-service:${server.port}
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:admin@cenlots2024-discoveryserver-service:8761/eureka/
+      defaultZone: http://admin:admin@tbiseo-discoveryserver-service:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
     registry-fetch-interval-seconds: 5
