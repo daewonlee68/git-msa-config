@@ -2,6 +2,7 @@ server:
   port: 8080
 
 login_trans_host: https://tirehub.co.kr
+redirect-app_uri: https://api.tirehub.co.kr/oauth2/callback/kakao
 
 spring:
   application:
