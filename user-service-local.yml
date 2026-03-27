@@ -1,6 +1,6 @@
 server:
   port: 9010
-  forward-headers-strategy: framework
+
 login_trans_host: http://localhost:3001
 redirect-app_uri: http://10.0.2.2:8080/oauth2/callback/kakao
 
