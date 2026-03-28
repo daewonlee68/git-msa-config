@@ -47,7 +47,7 @@ spring:
             client-id: 9ae080208ac737b4ad647d21c6ab1f0e
 #            client-secret: QnQPuzjuHKgK4WnWBj7utWZsXfSR52VX
             client-secret: anpI7SH7z1BFBLeG9Lm9TjIgRaQVgaBN
-            redirect-uri: https://tirehub.co.kr/oauth2/callback/kakao
+            redirect-uri: https://api.tirehub.co.kr/oauth2/callback/kakao
             client-authentication-method: POST
             authorization-grant-type: authorization_code
             scope: profile_nickname,account_email,phone_number
