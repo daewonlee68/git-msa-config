@@ -3,7 +3,6 @@ server:
   forward-headers-strategy: native
 
 login_trans_host: https://tirehub.co.kr
-redirect-app-uri: https://api.tirehub.co.kr/oauth2/callback/kakao
 
 spring:
   application:
