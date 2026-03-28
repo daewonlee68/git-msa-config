@@ -3,6 +3,7 @@ server:
   forward-headers-strategy: native
 
 login_trans_host: https://tirehub.co.kr
+cookie-domain: .tirehub.co.kr
 
 spring:
   application:
