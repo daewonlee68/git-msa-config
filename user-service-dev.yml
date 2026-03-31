@@ -4,6 +4,8 @@ server:
 
 login_trans_host: https://tirehub.co.kr
 cookie-domain: tirehub.co.kr
+redirect-web-uri=https://api.tirehub.co.kr/oauth2/callback/kakao
+redirect-app-uri=https://api.tirehub.co.kr/oauth2/callback/kakao
 
 spring:
   application:
