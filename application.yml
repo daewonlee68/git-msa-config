@@ -5,7 +5,8 @@ jwt:
   #echo 'silvernine-tech-spring-boot-jwt-tutorial-secret-silvernine-tech-spring-boot-jwt-tutorial-secret'|base64
 #  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
 #  token-validity-in-seconds: 86400
-#echo 'cen-cenlots-dw-spring-boot-jwt-secret-2024-12'|base64
+#this-is-tibiseo-tire-project-secret-2026-06-fighting!
+#746869732d69732d7469626973656f2d746972652d70726f6a6563742d7365637265742d323032362d30362d6669676874696e6721
   secret: 9F49BE664A28861CD323A019EF83B9CC4A8F6C987D553C83008D65B0E206D33A6F162B68DF88999BEA7A65156FEC294C9263F8334DDD29303258C945FFEEAAE4
   refresh-token-validity-in-seconds: 1209600 #1일은 86,400  7일 × 86,400 = 604,800
   access-token-validity-in-seconds: 14400 # 1시간-> 3600 4시간*3600 = 14400
