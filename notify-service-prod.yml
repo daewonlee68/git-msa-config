@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: notify-service
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active:
+      on-profile: prod
+  security:
+    user:
+      name: admin
+      password: admin
+
+jdbc:
+  url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
+  username: postgres
+  password: dev@tire1234!
+  driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
