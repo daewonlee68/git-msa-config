@@ -49,6 +49,13 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
+        - id: notify-service
+          uri: lb://NOTIFY-SERVICE
+          predicates:
+            - Path=/notify-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/notify-service/(?<segment>.*), /$\{segment}
         - id: openapi
           uri: http://tbiseo-api-service
           predicates:
