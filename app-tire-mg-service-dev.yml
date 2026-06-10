@@ -37,6 +37,12 @@ jdbc:
   password: dev@tire1234!
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 
+notify:
+  server:
+    base-url: http://notify-service.backend.svc.cluster.local:8080
+    send-path: /notify-service/api/v1/alarm/notify/send
+
+
 management:
   endpoint:
     health:
