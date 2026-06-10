@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: Notify-service
+    name: notify-service
   main:
     allow-bean-definition-overriding: true
   profiles:
