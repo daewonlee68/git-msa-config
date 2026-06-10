@@ -39,7 +39,7 @@ jdbc:
 
 notify:
   server:
-    base-url: http://notify-service.backend.svc.cluster.local:7100
+    base-url: http://notify-service.backend.svc.cluster.local:8080
     send-path: /notify-service/api/v1/alarm/notify/send
 
 management:
