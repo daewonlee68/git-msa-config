@@ -38,6 +38,11 @@ jdbc:
   password: user1234
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 
+notify:
+  server:
+    base-url: http://localhost:7100
+    send-path: /api/v1/alarm/notify/send
+
 management:
   endpoint:
     health:
