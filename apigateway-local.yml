@@ -56,6 +56,13 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/notify-service/(?<segment>.*), /$\{segment}
+        - id: market-service
+          uri: lb://MARKET-SERVICE
+          predicates:
+            - Path=/market-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/market-service/(?<segment>.*), /$\{segment}
         - id: openapi
           uri: http://tbiseo-api-service
           predicates:
