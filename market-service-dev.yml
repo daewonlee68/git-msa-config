@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: notify-service
+    name: market-service
   main:
     allow-bean-definition-overriding: true
   profiles:
