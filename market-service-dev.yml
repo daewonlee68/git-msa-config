@@ -9,6 +9,10 @@ spring:
   profiles:
     active:
       on-profile: dev
+  servlet:
+    multipart:
+      max-file-size: 2MB      # 10MB → 2MB
+      max-request-size: 2MB
   cloud:
     discovery:
       enabled: false
@@ -57,12 +61,6 @@ cloud:
       secret-key: ${S3_SECRET_KEY:}
 cdn:
   base-url: ${CDN_BASE_URL:}
-
-spring:
-  servlet:
-    multipart:
-      max-file-size: 2MB      # 10MB → 2MB
-      max-request-size: 2MB
 
 eureka:
   client:
