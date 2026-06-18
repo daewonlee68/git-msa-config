@@ -58,6 +58,12 @@ cloud:
 cdn:
   base-url: ${CDN_BASE_URL:}
 
+spring:
+  servlet:
+    multipart:
+      max-file-size: 2MB      # 10MB → 2MB
+      max-request-size: 2MB
+
 eureka:
   client:
     register-with-eureka: false  # 자신을 Eureka에 등록하지 않음
