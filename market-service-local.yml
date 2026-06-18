@@ -58,7 +58,7 @@ file:
 market:
   upload:
     dir: ${MARKET_UPLOAD_DIR:C:/market-uploads}   # ⚠️ 누락 — 상품 이미지 저장 경로
-    url-prefix: ${MARKET_URL_PREFIX:/market-uploads}  # ⚠️ 누락 — URL 접두사
+    url-prefix: ${MARKET_URL_PREFIX:/market-service/market-uploads}
 
 management:
   endpoint:
