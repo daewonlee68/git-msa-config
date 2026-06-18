@@ -9,6 +9,15 @@ spring:
   profiles:
     active:
       on-profile: local
+  servlet:
+    multipart:
+      max-file-size: 2MB      # 10MB → 2MB
+      max-request-size: 2MB
+  web:
+    resources:
+      static-locations: file:C:/market-uploads/   # 정적 파일 서빙
+  mvc:
+    static-path-pattern: /market-uploads/**
   cloud:
     config:
       retry:
@@ -50,17 +59,6 @@ market:
   upload:
     dir: ${MARKET_UPLOAD_DIR:C:/market-uploads}   # ⚠️ 누락 — 상품 이미지 저장 경로
     url-prefix: ${MARKET_URL_PREFIX:/market-uploads}  # ⚠️ 누락 — URL 접두사
-
-spring:
-  servlet:
-    multipart:
-      max-file-size: 2MB      # 10MB → 2MB
-      max-request-size: 2MB
-  web:
-    resources:
-      static-locations: file:C:/market-uploads/   # 정적 파일 서빙
-  mvc:
-    static-path-pattern: /market-uploads/**
 
 management:
   endpoint:
