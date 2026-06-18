@@ -13,6 +13,7 @@ spring:
     multipart:
       max-file-size: 2MB      # 10MB → 2MB
       max-request-size: 2MB
+      file-size-threshold: 0
   web:
     resources:
       static-locations: file:C:/market-uploads/   # 정적 파일 서빙
