@@ -62,6 +62,10 @@ cloud:
 cdn:
   base-url: ${CDN_BASE_URL:}
 
+file:
+  upload:
+    path: /app/uploads
+
 eureka:
   client:
     register-with-eureka: false  # 자신을 Eureka에 등록하지 않음
