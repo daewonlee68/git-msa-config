@@ -1,23 +1,34 @@
 server:
   port: 8080
-  forward-headers-strategy: framework
+  forward-headers-strategy: native
 
 login_trans_host: https://tirehub.co.kr
+cookie-domain: tirehub.co.kr
+redirect-web-uri: https://api.tirehub.co.kr/oauth2/callback/kakao
+redirect-app-uri: https://api.tirehub.co.kr/oauth2/callback/kakao
 
 spring:
   application:
     name: user-service
+  thymeleaf:
+    check-template-location: false
   profiles:
     active:
-      on-profile: prod
+      on-profile: dev
+  cloud:
+    discovery:
+      enabled: false
   redis:
     lettuce:
       pool:
         max-active: 10
         max-idle: 10
         min-idle: 2
-    port: 16379
-    host: dev-elasticache-replication-group.ikmdkh.ng.0001.apn2.cache.amazonaws.com
+    port: 6379
+    host: redis.backend.svc.cluster.local
+    password: admin1234!
+    timeout: 3000ms
+
 #  cloud:
 #    config:
 #      enabled: true
@@ -28,16 +39,17 @@ spring:
   # oauth2 를 사용하기 위해서는 아래의 TODO 를 등록해야 함
   security:
     user:
-      name: admin
-      password: admin
+      name: ${ACTUATOR_USER:admin}  # 환경변수 사용
+      password: ${ACTUATOR_PASSWORD:admin}  #환경변수 사용
     oauth2:
       client:
         registration:
           kakao:
-            client-id: 6c1a559189b320e2b1c6ede7c5506c01 # TODO https://developers.kakao.com/product/kakaoLogin
-            client-secret: 8NxjNcruMpXQeje7RRWMAXCUN6z7qQgf # TODO
-            redirect-uri: https://cenlots-api.cloit.dev/oauth2/callback/kakao
-##            redirect-uri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
+#            client-id: 6af5a456b722e07dc31337dd1820987e
+            client-id: 9ae080208ac737b4ad647d21c6ab1f0e
+#            client-secret: QnQPuzjuHKgK4WnWBj7utWZsXfSR52VX
+            client-secret: anpI7SH7z1BFBLeG9Lm9TjIgRaQVgaBN
+            redirect-uri: https://api.tirehub.co.kr/oauth2/callback/kakao
             client-authentication-method: POST
             authorization-grant-type: authorization_code
             scope: profile_nickname,account_email,phone_number
@@ -50,9 +62,9 @@ spring:
             user_name_attribute: id
 
 jdbc:
-  url: jdbc:log4jdbc:postgresql://10.10.5.183:5432/cenlotsdb03?charSet=UTF-8&prepareThreshold=1&serverTimezone=Asia/Seoul
-  username: cenadm03
-  password: cenlotaws123!
+  url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
+  username: postgres
+  password: dev@tire1234!
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 #  driverClassName: org.postgresql.Driver
 
@@ -77,13 +89,9 @@ jdbc:
 
 # config server actuator
 management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh, health, beans, info
-  health:
-    mail:
-      enabled: false
+  endpoint:
+    health:
+      show-details: when-authorized  # 인증 필요
 
 info:
   app:
@@ -95,18 +103,4 @@ log4jdbc:
     name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
   dump:
     sql:
-      maxlinelength: 0
-
-messages:
-  directory: test
-
-
-eureka:
-  instance:
-    prefer-ip-address: true
-    hostname: tbiseo-discoveryserver-service
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
+      maxlinelength: 100
