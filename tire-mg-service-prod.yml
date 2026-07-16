@@ -8,14 +8,46 @@ spring:
     allow-bean-definition-overriding: true
   profiles:
     active:
-      on-profile: prod
+      on-profile: dev
+  cloud:
+    discovery:
+      enabled: false
+    loadbalancer:
+      enabled: false
+  redis:
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+    port: 6379
+    host: redis.backend.svc.cluster.local
+    password: authadmin202607!
+    timeout: 3000ms
+  thymeleaf:
+    check-template-location: false
   security:
     user:
-      name: admin
-      password: admin
+      name: ${ACTUATOR_USER}  # Kubernetes Secret 필수
+      password: ${ACTUATOR_PASSWORD}  # Kubernetes Secret 필수
 
 jdbc:
-  url: jdbc:log4jdbc:postgresql://10.10.5.183:5432/cenlotsdb02?charSet=UTF-8&prepareThreshold=1&serverTimezone=Asia/Seoul
-  username: cenadm02
-  password: cenlotaws123!
+  url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
+  username: postgres
+  password: dev@tire1234!
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+notify:
+  server:
+    base-url: http://notify-service.backend.svc.cluster.local:8080
+    send-path: /notify-service/api/v1/alarm/notify/send
+
+management:
+  endpoint:
+    health:
+      show-details: when-authorized  # 인증 필요
+
+eureka:
+  client:
+    register-with-eureka: false  # 자신을 Eureka에 등록하지 않음
+    fetch-registry: false
