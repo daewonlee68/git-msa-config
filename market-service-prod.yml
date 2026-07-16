@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: notify-service
+    name: market-service
   main:
     allow-bean-definition-overriding: true
   profiles:
@@ -26,7 +26,7 @@ spring:
         min-idle: 2
     port: 6379
     host: redis.backend.svc.cluster.local
-    password: admin1234!
+    password: authadmin202607!
     timeout: 3000ms
   thymeleaf:
     check-template-location: false
@@ -61,6 +61,10 @@ cloud:
       secret-key: ${S3_SECRET_KEY:}
 cdn:
   base-url: ${CDN_BASE_URL:}
+
+file:
+  upload:
+    path: /app/uploads
 
 eureka:
   client:
