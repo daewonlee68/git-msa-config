@@ -58,6 +58,17 @@ notify:
     base-url: http://localhost:7100
     send-path: /api/v1/alarm/notify/send
 
+molit:
+  vehicle:
+    api:
+      enabled: true
+      url: https://linkstg.car365.go.kr/hub/kotsa
+      service-id: AC1_ZA85_01
+      cvmis-apikey: 7AA75EC3-917067ED-689C6D47-96345CA9
+      private-key-password: test1234!
+      public-key-path: D:\tiretest\open_car_api\api_ZA85\api_ZA85\ZA85\signCert_kotsa.der
+      private-key-path: D:\tiretest\open_car_api\api_ZA85\api_ZA85\ZA85\signPri.key
+
 management:
   endpoint:
     health:
