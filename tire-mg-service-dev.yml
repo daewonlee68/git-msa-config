@@ -67,8 +67,8 @@ molit:
     api:
       url: https://linkstg.car365.go.kr/hub/kotsa
       service-id: AC1_ZA85_01
-      cvmis-apikey: <발급키>
-      private-key-password: <비밀번호>
+      cvmis-apikey: 7AA75EC3-917067ED-689C6D47-96345CA9
+      private-key-password: test1234!
       public-key-base64: -----BEGIN CERTIFICATE-----
 LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZhRENDQkZDZ0F3SUJBZ0lD
 QVdrd0RRWUpLb1pJaHZjTkFRRUxCUUF3WlRFTE1Ba0dBMVVFQmhNQ1MxSXhNREF1
