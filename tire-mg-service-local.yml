@@ -68,6 +68,7 @@ molit:
       private-key-password: test1234!
       public-key-path: D:\tiretest\open_car_api\api_ZA85\api_ZA85\ZA85\signCert_kotsa.der
       private-key-path: D:\tiretest\open_car_api\api_ZA85\api_ZA85\ZA85\signPri.key
+      log-response: true
 
 management:
   endpoint:
