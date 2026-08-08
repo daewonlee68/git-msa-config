@@ -42,6 +42,16 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/app-tire-mg-service/(?<segment>.*), /$\{segment}
+        - id: tire-mg-service-price
+          uri: lb://TIRE-MG-SERVICE
+          predicates:
+            - Path=/tire-mg-service/api/v1/price/**
+          metadata:
+            connect-timeout: 30000
+            response-timeout: 300000
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/tire-mg-service/(?<segment>.*), /$\{segment}
         - id: tire-mg-service
           uri: lb://TIRE-MG-SERVICE
           predicates:
