@@ -60,7 +60,7 @@ spring:
             user_name_attribute: id
 
 jdbc:
-  url: jdbc:log4jdbc:postgresql://postgresql-external.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
+  url: jdbc:log4jdbc:postgresql://postgresql-external.prod.backend.svc.cluster.local:5432/tiremsdb?prepareThreshold=1
   username: admin_user
   password: admin@^1234!
   driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
