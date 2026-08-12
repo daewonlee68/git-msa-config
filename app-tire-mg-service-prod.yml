@@ -8,7 +8,7 @@ spring:
     allow-bean-definition-overriding: true
   profiles:
     active:
-      on-profile: dev
+      on-profile: prod
   cloud:
     discovery:
       enabled: false
