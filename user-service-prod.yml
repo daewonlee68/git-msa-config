@@ -14,7 +14,7 @@ spring:
     check-template-location: false
   profiles:
     active:
-      on-profile: dev
+      on-profile: prod
   cloud:
     discovery:
       enabled: false
