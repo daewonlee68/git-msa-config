@@ -50,7 +50,7 @@ spring:
             redirect-uri: https://api.tbiseo.com/oauth2/callback/kakao
             client-authentication-method: POST
             authorization-grant-type: authorization_code
-            scope: profile_nickname,account_email,phone_number
+            scope: profile_nickname,account_email
             client-name: Kakao
         provider:
           kakao:
