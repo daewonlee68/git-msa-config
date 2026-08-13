@@ -66,6 +66,12 @@ file:
   upload:
     path: /app/uploads
 
+minio:
+  endpoint: http://minio-external.minio.svc.cluster.local:9000
+  access-key: ${MINIO_BIZ_DOCS_ACCESS_KEY}
+  secret-key: ${MINIO_BIZ_DOCS_SECRET_KEY}
+  bucket: business-docs
+
 eureka:
   client:
     register-with-eureka: false  # 자신을 Eureka에 등록하지 않음
